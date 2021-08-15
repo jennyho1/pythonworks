@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<link rel="stylesheet" href="styles.css">
+		<script type="module" src="script.js"></script>
+	</head>
+
+	<body>
+		<nav>
+			{{#private}}
+			<a href='/~/pythonworks/lessons'>Lessons</a>
+				<a href='/~/pythonworks/freestyle'>FreeStyle</a>
+				<a href='/~/pythonworks'>My Profile</a>
+				<a href='/~/pythonworks/logout'>Log out</a>
+			{{/private}}
+		</nav>
+		<main>
+			{{^private}}
+				<div class='welcome-container'>
+					<h1>
+						PythonWorks
+					</h1>
+					<h2>
+						Welcome Coders! Are you ready to learn coding in Python? Start your journey here.
+					</h2>
+				</div>
+				<div class='signup-login-container'>
+					<div class='green-container'>
+						<div class='green-container'>
+							<h1>
+								Sign Up
+							</h1>
+							<form action='/~/pythonworks/signup' method='POST' enctype='multipart/form-data'>
+								<input type="text" name="firstname" id="firstname" placeholder="First Name" required>
+					<input type="text" name="lastname" id="lastname" placeholder="Last Name" required>
+								<input type='email' name='username' placeholder='Email' required>
+								<input type='password' name='password' placeholder='Password' required>
+								<input type='submit' value='Sign up'>
+								<input type='hidden' name='redirecturl' value='/~/pythonworks' onclick='create()'>
+							</form>
+						</div>
+					</div>
+					<div class='green-container'>
+						<div class='login-container'>
+							<h1> Login </h1>
+							<form action='/~/pythonworks/login' method='POST' enctype='multipart/form-data'>
+								<input type='email' name='username' placeholder='Email' required>
+								<input type='password' name='password' placeholder='Password' required>
+
+								<input type='submit' value='Log In'>
+
+								<input type='hidden' name='redirecturl' value='/~/pythonworks'>
+							</form>
+						</div>
+					</div>
+				</div>
+			{{/private}}
+
+			{{#private}}
+				<div class='profile-info-container'>
+				<h2> My Profile </h2>
+				<p>Email: {{username}}</p>
+				<p>Name: {{firstname}} {{lastname}}</p>
+
+			</div>
+			{{/private}}
+
+		</main>
+		<footer>
+			© 2021 PythonWorks
+		</footer>
+	</body>
+
+</html>

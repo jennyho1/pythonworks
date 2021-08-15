@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<link rel="stylesheet" href="styles.css">
+		<script type="module" src="script.js"></script>
+	</head>
+
+	<body>
+		<nav>
+			{{#private}}
+				<a href='/~/pythonworks/lessons'>Lessons</a>
+				<a href='/~/pythonworks/freestyle'>FreeStyle</a>
+				<a href='/~/pythonworks'>My Profile</a>
+				<a href='/~/pythonworks/logout'>Log out</a>
+			{{/private}}
+		</nav>
+		<main>
+			<div class='lesson-container'>
+				<div>
+					<button type="button" class="collapsible">Hello World</button>
+					<div class="content">
+						<p>In this lesson, you will learn how to print something on the screen.</p>
+						<a class='go-lesson' href='helloworld'>Go to lesson >></a>
+					</div>
+				</div>
+				<div>
+					<button type="button" class="collapsible">Boolean</button>
+					<div class="content">
+						<p>This lesson introduces Python's built-in data type: Boolean. 
+						It's used to represent the truth value of an expression</p>
+						<a class='go-lesson' href='boolean'>Go to lesson >></a>
+					</div>
+				</div>
+				<div>
+					<button type="button" class="collapsible">Lists</button>
+					<div class="content">
+						<p>Not posted yet</p>
+					</div>
+				</div>
+				<div>
+					<button type="button" class="collapsible">Loops</button>
+					<div class="content">
+						<p>Not posted yet</p>
+					</div>
+				</div>
+				<div>
+					<button type="button" class="collapsible">Functions</button>
+					<div class="content">
+						<p>Not posted yet</p>
+					</div>
+				</div>
+				<div>
+					<button type="button" class="collapsible">Strings</button>
+					<div class="content">
+						<p>Not posted yet</p>
+					</div>
+				</div>
+				<div>
+					<button type="button" class="collapsible">Dictionaries</button>
+					<div class="content">
+						<p>Not posted yet</p>
+					</div>
+				</div>
+			</div>
+
+			<script>
+				var coll = document.getElementsByClassName("collapsible");
+				var i;
+
+				for (i = 0; i < coll.length; i++) {
+					coll[i].addEventListener("click", function () {
+						this.classList.toggle("active");
+						var content = this.nextElementSibling;
+						if (content.style.display === "block") {
+							content.style.display = "none";
+						} else {
+							content.style.display = "block";
+						}
+					});
+				}
+			</script>
+		</main>
+		<footer>
+			© 2021 PythonWorks
+		</footer>
+	</body>
+
+</html>

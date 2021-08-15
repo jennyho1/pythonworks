@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<link rel="stylesheet" href="styles.css">
+		<script type="module" src="script.js"></script>
+	</head>
+
+	<body>
+		<nav>
+			{{#private}}
+				<a href='/~/pythonworks/lessons'>Lessons</a>
+				<a href='/~/pythonworks/freestyle'>FreeStyle</a>
+				<a href='/~/pythonworks'>My Profile</a>
+				<a href='/~/pythonworks/logout'>Log out</a>
+			{{/private}}
+		</nav>
+		<main>
+			<div class='lesson-container'>
+				<div>
+					<p>In programming you often need to know if an expression is True or False. For example,
+						the statement "4 > 8" is false because 4 is not bigger than 8.</p>
+					<table>
+						<tr>
+							<th>   Symbol   </th>
+							<th>Description</th>
+						</tr>
+						<tr>
+							<td><</td>
+							<td>smaller than</td>
+						</tr>
+						<tr>
+							<td><=</td>
+							<td>smaller or equal to</td>
+						</tr>
+						<tr>
+							<td>></td>
+							<td>greater than</td>
+						</tr>
+						<tr>
+							<td>>=</td>
+							<td>greater or equal to</td>
+						</tr>
+						<tr>
+							<td>==</td>
+							<td>equals</td>
+						</tr>
+
+					</table>
+					<p>Here are some examples to get you started:</p>
+					<xmp>
+						>>> 10 == 10
+						True
+						>>> 3 >= 4
+						False
+					</xmp>
+				</div>
+
+				<iframe src="https://brython.info/console.html" width="650" height="340"></iframe>
+				<div>
+					<p>When you're done experimenting, answer the question below to complete this lesson</p>
+					<p>What does the following expression evaluate to: 23 <= 23</p>
+					<textarea class='verify' id='booleaninput'></textarea>
+					<button class='verify' onclick='verify()'>Verify</button>
+					<p id='booleanresult'></p>
+
+					<script>
+						function verify() {
+							var input = document.getElementById("booleaninput");
+							var result = document.getElementById("booleanresult")
+							if (input.value == "True" || input.value == "true") {
+								result.innerHTML = 'Correct!';
+								result.style.color = 'green';
+
+							} else {
+								result.innerHTML = 'Not quite, try again!';
+								result.style.color = 'red';
+							}
+						}
+					</script>
+				</div>
+			</div>
+		</main>
+		<footer>
+			© 2021 PythonWorks
+		</footer>
+	</body>
+
+</html>

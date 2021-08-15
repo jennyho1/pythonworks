@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<link rel="stylesheet" href="styles.css">
+		<script type="module" src="script.js"></script>
+	</head>
+
+	<body>
+		<nav>
+			{{#private}}
+				<a href='/~/pythonworks/lessons'>Lessons</a>
+				<a href='/~/pythonworks/freestyle'>FreeStyle</a>
+				<a href='/~/pythonworks'>My Profile</a>
+				<a href='/~/pythonworks/logout'>Log out</a>
+			{{/private}}
+		</nav>
+		<main>
+			<div class='profile-info-container'>
+				<h2> My Profile </h2>
+				<p>Email: {{username}}</p>
+				<p>Name: {{firstname}} {{lastname}}</p>
+
+			</div>
+		</main>
+		<footer>
+			© 2021 PythonWorks
+		</footer>
+	</body>
+
+</html>
